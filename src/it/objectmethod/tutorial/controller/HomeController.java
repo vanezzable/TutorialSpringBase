@@ -23,7 +23,7 @@ public class HomeController {
 		System.out.println(variabile.ciaoSalvo());
 	}
 
-	//	@RequestMapping("/index")
+//		@RequestMapping("/index")
 //		@RequestMapping(value="/index", method=RequestMethod.GET) 
 	@GetMapping("/index")
 	public String index() {
@@ -37,16 +37,16 @@ public class HomeController {
 		return "main";
 	}
 	
-	@GetMapping("/pagina/{numeroPagina}")
-	public String paginaNumerata(@PathVariable("numeroPagina") Integer numero, ModelMap model) {
-		model.addAttribute("num", numero);
-		return "pagina";
-	}
-	
 	@PostMapping("/login")
 	public String login(@RequestParam("username") String username, ModelMap model) {
 		model.addAttribute("user", username);
 		return "forward:/landing-control";
+	}
+	
+	@GetMapping("/pagina/{numeroPagina}/show")
+	public String paginaNumerata(@PathVariable("numeroPagina") Integer numero, ModelMap model) {
+		model.addAttribute("num", numero);
+		return "pagina";
 	}
 	
 	@RequestMapping("/landing-control")

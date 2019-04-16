@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>PAGINA NUMERO ${num}</h1>
-	<form action="../login" method="POST">
+	<form action="/TutorialSpringBase/login" method="POST">
 		<input type="text" name="username" />
 		<input type="submit" value="LOGIN"/>
 	</form>
