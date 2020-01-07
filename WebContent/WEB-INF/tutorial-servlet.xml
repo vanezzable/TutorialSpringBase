@@ -16,7 +16,7 @@
 		base-package="it.objectmethod.tutorial" />
 	<mvc:default-servlet-handler />
 
-	<bean id="dataSource"
+	<bean id="dataSourceObject"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
@@ -28,7 +28,7 @@
 
 	<bean id="countryDao"
 		class="it.objectmethod.tutorial.dao.impl.CountryDaoFigoImpl">
-		<property name="dataSource" ref="dataSource" />
+		<property name="dataSource" ref="dataSourceObject" />
 	</bean>
 
 	<bean id="viewResolver"
