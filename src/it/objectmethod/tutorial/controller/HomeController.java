@@ -13,10 +13,10 @@ import it.objectmethod.tutorial.esempio.EsempioSalvo;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	EsempioSalvo variabile;
-	
+
 	@RequestMapping("/esempio-salvo")
 	public void esempio() {
 //		EsempioSalvo variabile = new EsempioSalvo();
@@ -29,31 +29,30 @@ public class HomeController {
 	public String index() {
 		return "home";
 	}
-	
+
 	@GetMapping("/welcome")
 	public String welcomePage(ModelMap model) {
-		
+
 		model.addAttribute("benvenuto", "Benvenuto nella pagina di tutorial!!");
 		return "main";
 	}
-	
+
 	@PostMapping("/login")
-	public String login(@RequestParam("username") String username, ModelMap model) {
+	public String login(@RequestParam(name = "username", required = false) String username, ModelMap model) {
 		model.addAttribute("user", username);
 		return "forward:/landing-control";
 	}
-	
+
 	@GetMapping("/pagina/{numeroPagina}/show")
 	public String paginaNumerata(@PathVariable("numeroPagina") Integer numero, ModelMap model) {
 		model.addAttribute("num", numero);
 		return "pagina";
 	}
-	
+
 	@RequestMapping("/landing-control")
 	public String landingCheck(ModelMap model) {
 		model.addAttribute("passato", "Sono passato da landing!");
 		return "landing";
 	}
-	
 
 }
