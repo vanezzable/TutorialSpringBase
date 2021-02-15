@@ -16,18 +16,18 @@
 		base-package="it.objectmethod.tutorial" />
 	<mvc:default-servlet-handler />
 
-	<bean id="dataSourceObject"
+	<bean id="dataSourceObject"   
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/world" />
+			value="jdbc:mysql://localhost:33060/world" />
 		<property name="username" value="root" />
-		<property name="password" value="rootroot" />
+		<property name="password" value="zK5X7HgttK62fwqdKc" />
 	</bean>
 
 	<bean id="countryDao"
-		class="it.objectmethod.tutorial.dao.impl.CountryDaoFigoImpl">
+		class="it.objectmethod.tutorial.dao.impl.CountryDaoImpl">
 		<property name="dataSource" ref="dataSourceObject" />
 	</bean>
 
